@@ -151,4 +151,4 @@ USER node
 # For external access from host/ingress, override bind to "lan" and set auth.
 HEALTHCHECK --interval=3m --timeout=10s --start-period=15s --retries=3 \
   CMD node -e "fetch('http://127.0.0.1:18789/healthz').then((r)=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
-CMD sh -c "openclaw setup && openclaw config set gateway.mode local && openclaw pairing approve telegram LZGMJD6V && openclaw gateway --foreground"
+CMD sh -c "openclaw setup && openclaw config set gateway.mode local && openclaw gateway --foreground"
