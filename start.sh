@@ -3,7 +3,7 @@
 # 1. Start the "Alive" server for UptimeRobot
 node -e "require('http').createServer((req, res) => res.end('Alive')).listen(10000, '0.0.0.0');" &
 
-# 2. Write the ENTIRE config file with the 2026.3 correct keys
+# 2. Write the config file with the specific "main" agent mapping
 mkdir -p ~/.openclaw
 echo '{
   "gateway": {"mode": "local"},
@@ -14,7 +14,7 @@ echo '{
     }
   },
   "agents": {
-    "defaults": {
+    "main": {
       "model": "google/gemini-3.1-pro-preview",
       "instructions": "You are Gram, Magnets ultralight trail assistant. You know Magnet is Sean Berenson, an experienced thru-hiker. You have a direct, opinionated vibe focused on all things hiking."
     }
